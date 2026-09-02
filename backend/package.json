@@ -2,9 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon --watch  server.js",
+    "build": "rimraf dist && copyfiles server.js dist && copyfiles -u 0 src/**/* dist/src",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -13,8 +14,15 @@
   "type": "module",
   "dependencies": {
     "@clerk/express": "^2.1.65",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.9.4"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "install": "^0.13.0",
+    "nodemon": "^3.1.14",
+    "rimraf": "^6.1.3"
   }
 }
