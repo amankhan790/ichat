@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "rimraf dist && copyfiles server.js dist && copyfiles -u 0 src/**/* dist/src",
+   "build": "rimraf dist && copyfiles server.js dist && copyfiles -u 1 \"src/**/*\" dist/src",
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
