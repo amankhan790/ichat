@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-   "build": "rimraf dist && copyfiles server.js dist && copyfiles -u 1 \"src/**/*\" dist/src",
+    "build": "rimraf dist && copyfiles server.js dist && copyfiles -u 1 \"src/**/*\" dist/src",
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
@@ -15,6 +15,7 @@
   "dependencies": {
     "@clerk/express": "^2.1.65",
     "cors": "^2.8.6",
+    "cron": "^4.4.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.9.4"
