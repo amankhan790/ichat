@@ -4,6 +4,7 @@ import cors from "cors";
 import fs from "fs";
 import path from "path";
 import clerkWebhook from "./webhooks/clerk.webhook.js";
+import authRoutes from "./routes/auth.route.js";
 
 const app = express();
 
@@ -29,6 +30,9 @@ app.use(clerkMiddleware());
 app.get("/health", (req, res) => {
   res.status(200).json({ message: "Server is healthy" });
 });
+
+// Routes
+app.use("/api/auth", authRoutes);
 
 if (fs.existsSync(publicDir)) {
   app.use(express.static(publicDir));
