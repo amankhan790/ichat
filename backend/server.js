@@ -2,7 +2,7 @@ import app from "./src/app.js";
 import dotenv from "dotenv";
 import connectDB from "./src/lib/db.js";
 import dns from "dns";
-import job from "./src/lib/job.js";
+import job from "./src/lib/cron.js";
 
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
