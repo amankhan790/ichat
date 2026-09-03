@@ -1,3 +1,5 @@
+import { getReceiverSocketId, io } from "../lib/socket.js";
+
 export async function getUsersForSidebar(req, res) {
   try {
     const loggedInUserId = req.user._id;
@@ -111,6 +113,13 @@ export async function sendMessage(req, res) {
     });
 
     // todo: realtime with socketio
+    await newMessage.save();
+
+    const receiverSocketId = getReceiverSocketId(receiverId);
+    // only send the message in real time if the user is online
+    if (receiverId) {
+      io.to(receiverSocketId).emit("newMessage", newMessage);
+    }
 
     res.status(201).json(newMessage);
   } catch (error) {

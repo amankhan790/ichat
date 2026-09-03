@@ -3,7 +3,7 @@ import {
   getUsersForSidebar,
   getConversationsForSidebar,
   getMessages,
-  sendMessage
+  sendMessage,
 } from "../controller/messege.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
 import { upload } from "../middleware/upload.middleware.js";

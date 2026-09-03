@@ -7,9 +7,9 @@ import clerkWebhook from "./webhooks/clerk.webhook.js";
 import authRoutes from "./routes/auth.route.js";
 import messegeRoutes from "./routes/messege.route.js";
 
-const app = express();
-
 const publicDir = path.join(process.cwd(), "public");
+
+const app = express();
 
 app.use(
   "/api/webhooks/clerk",
