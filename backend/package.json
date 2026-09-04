@@ -6,13 +6,15 @@
   "scripts": {
     "build": "rimraf dist && copyfiles server.js dist && copyfiles -u 1 \"src/**/*\" dist/src",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "db:seed": "node src/seeds/user.seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@clerk/backend": "^3.17.1",
     "@clerk/express": "^2.1.65",
     "@imagekit/nodejs": "^7.11.0",
     "cors": "^2.8.6",

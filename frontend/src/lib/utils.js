@@ -1,5 +1,5 @@
 export function formatMessageTime(date) {
-  return new date(date).toLocaleTimeString([], {
+  return new Date(date).toLocaleTimeString([], {
     hour: "numeric",
     minute: "2-digit",
   });
